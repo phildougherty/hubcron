@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
+    <title>Hub Cron - Pull those open source images from DockerHub so they dont get deleted</title>
     
     <link
       rel="stylesheet"
@@ -14,45 +14,16 @@
   <body>
     <div class="container">
       <div class="row">
-        <form action="/addTask" method="POST">
+        <p>I am the DockerHub cron bot └[∵┌]└[ ∵ ]┘[┐∵]┘</p>
+        <p>I pull your public free docker images once every 6 months - 1 day.</p>
+        <form action="/addImage" method="POST">
           <div class="col-md-offset-2 col-md-6 col-sm-offset-1 col-sm-7">
-            <input type="text" class="form-control" name="textTodo" placeholder="create new task"/>
+            <label for="dimage">youruser/yourimage:</label><br />
+            <input type="text"  class="form-control" id="dimage" name="dimage" /><br />
+            <input type="submit" value="Gimme Images" />
           </div>
-          <div class="col-md-4 col-sm-4">
-          <button type="submit" class="btn btn-md btn-default" >
-            ADD
-          </button>
-        </div>
         </form>
-      
-    </div>
-      <hr />
-      <div class="row">
-        <div class="col-md-6 col-sm-6">
-          <h4>Todo Items</h4>
-          <ul id="todo">
-          <% for(var i = 0; i <todos.length; i++){%>
-            <% if(todos[i].status == 0){ %>
-              <li>
-                <input type="checkbox" name="todo" value="<%= todos[i].id%>" onclick='moveTask(event,"<%= todos[i].id %>")' /> <%= todos[i].task%> 
-              </li>
-            <%} %>
-                
-          <%} %>
-          </ul>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <h4>Done Items</h4>
-          <ul id="done">
-            <% for(var i = 0; i <todos.length; i++){%>
-              <% if(todos[i].status == 1){ %>
-              <li><input type="checkbox" name="done" value="<%= todos[i].id%>" onclick='moveTask(event,"<%= todos[i].id %>")'/> <%= todos[i].task%> </li>
-              <%} %>
-              <%} %>
-          </ul>
-        </div>
       </div>
-    </div>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
