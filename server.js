@@ -16,7 +16,7 @@ app.use(express.static("public"));
 
 // res.render
 app.get("/", (req, res) => {
-  db.select("db")
+  db.select("images")
     .from("docker_images")
     .then(data => {
       res.render("index", { images: data });
