@@ -4,6 +4,7 @@ const kenx = require("knex");
 const db = kenx({
   client: "pg",
   connection: process.env.DATABASE_URL,
+  ssl: true
 });
 
 const app = express();
