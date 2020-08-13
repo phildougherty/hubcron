@@ -29,7 +29,6 @@ app.post("/addImage", (req, res) => {
   const { dockerImage } = req.body;
   db("docker_images")
     .insert([{ image: dockerImage }])
-    .timestamp('time_added', { useTz: true })
     .returning("*")
     .then(todo => {
       res.redirect("/");

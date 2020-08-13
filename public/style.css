@@ -36,6 +36,10 @@ ul {
     top: -37px;
 }
 
+p {
+    text-align: center;
+}
+
 /* #done {
     margin-left: 17px;
     margin-top: 10px;
