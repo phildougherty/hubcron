@@ -16,10 +16,10 @@ app.use(express.static("public"));
 
 // res.render
 app.get("/", (req, res) => {
-  db.select("images")
+  db.select("image")
     .from("docker_images")
     .then(data => {
-      res.render("index", { images: data });
+      res.render("index", { image: data });
     })
     .catch(err => res.status(400).json(err));
 });
